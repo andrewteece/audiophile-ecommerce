@@ -1,36 +1,128 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎧 Audiophile E-commerce Website (In Progress)
 
-## Getting Started
+Welcome to the **Audiophile E-commerce Website**, a full-featured, multi-page e-commerce platform for premium audio gear.
 
-First, run the development server:
+This is a professional project being built from the ground up with modern tooling including **Next.js 15**, **TypeScript**, **Tailwind CSS v4**, **Zustand**, and **ShadCN UI**.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This README outlines our goals, stack, implementation strategy, and ongoing progress. The project is being built publicly and documented in a blog series at [andrewteece.com](https://andrewteece.com).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🧭 Project Overview
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+The goal is to create a polished, scalable e-commerce web app with:
 
-## Learn More
+- Dynamic product listings and detail pages
+- Cart and checkout functionality
+- Responsive design and accessibility
+- Modern architecture and clean component structure
 
-To learn more about Next.js, take a look at the following resources:
+It will serve both as a **real-world portfolio piece** and a demonstration of full front-end system design.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 🔧 Tech Stack
 
-## Deploy on Vercel
+| Category           | Tool |
+|--------------------|------|
+| Framework          | [Next.js 15](https://nextjs.org/) (App Router) |
+| Styling            | [Tailwind CSS v4](https://tailwindcss.com) |
+| Components         | [ShadCN/UI](https://ui.shadcn.com) |
+| State Management   | [Zustand](https://github.com/pmndrs/zustand) |
+| Type Safety        | TypeScript |
+| Animations         | Framer Motion |
+| Icons              | Lucide |
+| Testing            | Jest + React Testing Library, Playwright |
+| Deployment         | Vercel (planned) |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📦 Current Status
+
+This project is currently in the **setup & planning phase**.
+
+We have:
+- ✅ Initialized the project with `create-next-app`
+- ✅ Installed Tailwind CSS v4
+- ✅ Integrated ShadCN UI components
+- ✅ Created initial folder structure:
+  - `components/`, `features/`, `store/`, `lib/`, `types/`, `data/`, `styles/`
+
+---
+
+## 🗂️ Planned Folder Structure
+
+src/
+├── app/ # App Router pages/layout
+├── components/ # UI + reusable components
+├── features/ # Feature-level modules (cart, checkout, etc.)
+├── store/ # Zustand state
+├── lib/ # Utility functions
+├── types/ # TypeScript interfaces
+├── data/ # Static or CMS-driven product data
+├── styles/ # Tailwind and global styles
+
+## ✨ Feature Goals
+
+- ✅ Layout shell with responsive header/footer
+- 🛒 Cart functionality with add/edit/remove
+- 🧾 Checkout form with validation
+- 💵 Dynamic totals (VAT + shipping logic)
+- 📱 Mobile-first responsive design
+- 💾 Cart persistence with `localStorage`
+- 🔐 Accessible navigation and modals
+- 🌐 CMS integration (planned)
+- 🧪 Testing setup with Jest + Playwright
+
+---
+
+## 📅 Development Milestones
+
+| Phase                  | Status  |
+|------------------------|---------|
+| Project Init + Config  | ✅ Done |
+| Layout Shell Setup     | ⏳ Starting Next |
+| Product Pages & Cart   | ⏳ Planned |
+| Checkout Flow          | ⏳ Planned |
+| CMS Integration        | 🔜 Optional |
+| Testing & QA           | 🔜 Final Phase |
+| Blog Documentation     | 📝 Ongoing |
+
+---
+
+## 🧠 Learning & Documentation Goals
+
+This project will be featured in a **build-in-public** blog series at [andrewteece.com/blog](https://andrewteece.com/blog), covering:
+
+- Architecture decisions
+- Component breakdowns
+- Performance considerations
+- UI/UX design decisions
+- Accessibility implementation
+- Lessons learned
+
+---
+
+## 🧪 Testing Stack
+
+| Type        | Tool |
+|-------------|------|
+| Unit/Component | **Jest** + **React Testing Library** |
+| E2E Testing    | **Playwright** |
+| Linting & Types| ESLint, TypeScript |
+| Accessibility  | Optional: axe-core / Playwright a11y tools |
+
+---
+
+## 📬 Feedback & Contact
+
+Questions or suggestions?  
+Connect via [LinkedIn](https://www.linkedin.com/in/andrew-teece/) or visit [andrewteece.com](https://andrewteece.com).
+
+---
+
+## 💡 Next Step
+
+We’ll begin building the **layout shell** with navigation, footer, and responsive container components using ShadCN and Tailwind’s new v4 utilities. This foundation will support all feature development moving forward.
+
+Stay tuned!
