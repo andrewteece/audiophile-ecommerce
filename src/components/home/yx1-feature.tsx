@@ -7,7 +7,7 @@ import { Container } from '@/components/layout/container';
 
 export function Yx1Feature() {
   return (
-    <section className='py-24'>
+    <section className='pt-4 pb-16'>
       <Container>
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-6'>
           {/* Image */}

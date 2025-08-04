@@ -21,7 +21,7 @@ export function BestGear() {
 
           {/* Text */}
           <div className='text-center md:text-left order-2 md:order-1'>
-            <h2 className='text-3xl md:text-4xl font-bold uppercase tracking-wide text-neutral-900'>
+            <h2 className='text-3xl md:text-4xl font-bold uppercase tracking-wide text-neutral-900 px-2'>
               Bringing you the <span className='text-primary'>best</span> audio
               gear
             </h2>

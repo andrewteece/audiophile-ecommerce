@@ -46,8 +46,15 @@ export function CategoryGrid() {
               {name}
             </h2>
 
-            <span className='mt-2 text-sm text-muted-foreground group-hover:text-primary transition-colors tracking-wide'>
-              Shop &rarr;
+            <span className='mt-2 text-sm text-muted-foreground group-hover:text-primary transition-colors tracking-wide flex items-center gap-2'>
+              Shop
+              <Image
+                src='/assets/shared/desktop/icon-arrow-right.svg'
+                alt=''
+                width={8}
+                height={12}
+                className='transition-transform group-hover:translate-x-1'
+              />
             </span>
           </Link>
         ))}

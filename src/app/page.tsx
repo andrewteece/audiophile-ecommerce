@@ -1,4 +1,4 @@
-import { Container } from '@/components/layout/container';
+// import { Container } from '@/components/layout/container';
 import { Hero } from '@/components/home/hero';
 import { CategoryGrid } from '@/components/home/category-grid';
 import { Zx9Feature } from '@/components/home/zx9-feature';
@@ -15,16 +15,6 @@ export default function Home() {
       <Zx7Feature />
       <Yx1Feature />
       <BestGear />
-      <section className='bg-background text-foreground'>
-        <Container>
-          <h1 className='text-4xl font-bold tracking-wide uppercase mb-4'>
-            Welcome to Audiophile
-          </h1>
-          <p className='text-muted-foreground'>
-            High-end audio gear. Built with Next.js.
-          </p>
-        </Container>
-      </section>
     </>
   );
 }
