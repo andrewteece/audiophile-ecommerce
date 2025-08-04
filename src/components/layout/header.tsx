@@ -12,7 +12,7 @@ const navLinks = [
 
 export function Header() {
   return (
-    <header className='bg-background text-foreground border-b border-border'>
+    <header className='bg-foreground text-background border-b'>
       <Container className='flex items-center justify-between py-6'>
         {/* Mobile Menu + Logo */}
         <div className='flex items-center gap-4 md:hidden'>

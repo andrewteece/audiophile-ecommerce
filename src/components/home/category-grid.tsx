@@ -25,12 +25,12 @@ const categories = [
 export function CategoryGrid() {
   return (
     <section className='py-20 bg-background'>
-      <Container className='grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3'>
+      <Container className='grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3 '>
         {categories.map(({ name, slug, image }) => (
           <Link
             key={slug}
             href={`/category/${slug}`}
-            className='relative bg-secondary rounded-lg py-10 flex flex-col items-center text-center group'
+            className='relative bg-muted rounded-lg py-10 flex flex-col items-center text-center group'
           >
             <div className='w-36 h-36 relative -mt-20'>
               <Image
