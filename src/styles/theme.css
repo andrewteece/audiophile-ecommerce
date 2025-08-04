@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
+@theme {
+  --font-sans: 'Manrope', sans-serif;
+
+  --background: 0 0% 98%;
+  --foreground: 0 0% 6%;
+  --muted: 0 0% 95%;
+  --muted-foreground: 0 0% 40%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 22 65% 57%;
+  --primary: 22 65% 57%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 90%;
+  --secondary-foreground: 0 0% 0%;
+  --accent: 0 0% 95%;
+  --accent-foreground: 0 0% 6%;
+  --card: 0 0% 100%;
+  --card-foreground: 0 0% 6%;
+}
+
+.dark {
+  --background: 0 0% 6%;
+  --foreground: 0 0% 98%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 70%;
+  --border: 0 0% 20%;
+  --input: 0 0% 20%;
+  --ring: 22 65% 57%;
+  --primary: 22 65% 57%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 0 0% 25%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 0 0% 20%;
+  --accent-foreground: 0 0% 100%;
+  --card: 0 0% 10%;
+  --card-foreground: 0 0% 98%;
+}
