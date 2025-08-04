@@ -8,7 +8,7 @@ import { Container } from '@/components/layout/container';
 export function Hero() {
   return (
     <section className='bg-primary text-primary-foreground overflow-hidden'>
-      <Container className='flex flex-col-reverse items-center justify-between gap-10 py-24 md:flex-row md:gap-20 lg:py-32'>
+      <Container className='flex flex-col-reverse items-center justify-between gap-10 py-24 md:flex-row md:gap-20 lg:py-32 '>
         {/* Text */}
         <div className='text-center md:text-left max-w-md'>
           <p className='uppercase text-sm tracking-[10px] opacity-75 mb-4'>
