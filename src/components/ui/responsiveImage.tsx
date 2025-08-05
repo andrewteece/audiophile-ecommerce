@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { responsiveImageWrapper } from './ResponsiveImage.variants';
 
 type ResponsiveImageProps = {
   alt: string;
@@ -12,6 +13,8 @@ type ResponsiveImageProps = {
     desktop: string;
   };
   objectPosition?: string;
+  ratio?: 'square' | 'wide' | 'tall' | 'auto';
+  blurDataURL?: string;
 };
 
 export function ResponsiveImage({
@@ -20,40 +23,37 @@ export function ResponsiveImage({
   priority = false,
   images,
   objectPosition = 'center',
+  ratio = 'auto',
+  blurDataURL,
 }: ResponsiveImageProps) {
+  const sharedProps = {
+    fill: true,
+    priority,
+    placeholder: blurDataURL ? ('blur' as const) : ('empty' as const),
+    blurDataURL,
+    style: { objectPosition },
+    className: `object-cover ${className}`,
+  };
+
   return (
     <>
       {/* Mobile */}
-      <div className='relative md:hidden w-full h-full'>
-        <Image
-          src={images.mobile}
-          alt={alt}
-          fill
-          className={`object-cover object-[${objectPosition}] ${className}`}
-          priority={priority}
-        />
+      <div className={responsiveImageWrapper({ ratio }) + ' md:hidden'}>
+        <Image src={images.mobile} alt={alt} {...sharedProps} />
       </div>
 
       {/* Tablet */}
-      <div className='relative hidden md:block lg:hidden w-full h-full'>
-        <Image
-          src={images.tablet}
-          alt={alt}
-          fill
-          className={`object-cover object-[${objectPosition}] ${className}`}
-          priority={priority}
-        />
+      <div
+        className={
+          responsiveImageWrapper({ ratio }) + ' hidden md:block lg:hidden'
+        }
+      >
+        <Image src={images.mobile} alt={alt} {...sharedProps} />
       </div>
 
       {/* Desktop */}
-      <div className='relative hidden lg:block w-full h-full'>
-        <Image
-          src={images.desktop}
-          alt={alt}
-          fill
-          className={`object-cover object-[${objectPosition}] ${className}`}
-          priority={priority}
-        />
+      <div className={responsiveImageWrapper({ ratio }) + ' hidden lg:block'}>
+        <Image src={images.mobile} alt={alt} {...sharedProps} />
       </div>
     </>
   );
