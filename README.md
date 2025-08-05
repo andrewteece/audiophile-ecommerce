@@ -39,38 +39,35 @@ It will serve both as a **real-world portfolio piece** and a demonstration of fu
 
 ## 📦 Current Status
 
-This project is currently in the **setup & planning phase**.
+The **mobile version of the homepage is functionally and visually complete.**
 
 We have:
-- ✅ Initialized the project with `create-next-app`
-- ✅ Installed Tailwind CSS v4
-- ✅ Integrated ShadCN UI components
-- ✅ Created initial folder structure:
-  - `components/`, `features/`, `store/`, `lib/`, `types/`, `data/`, `styles/`
+- ✅ Project scaffolded with `create-next-app` using `src/` directory
+- ✅ Tailwind CSS v4 configured and tokenized with custom HSL themes
+- ✅ ShadCN UI installed and integrated
+- ✅ All homepage sections fully implemented for mobile:
+  - Hero
+  - Category Grid
+  - ZX9 Feature
+  - ZX7 Feature
+  - YX1 Feature
+  - Best Gear
+  - Footer
+- ✅ Shared `Container` component for layout consistency
+- ✅ Fully responsive image system with `ResponsiveImage` abstraction
+- ✅ Accessibility audit completed with semantic markup and alt text best practices
 
 ---
-
-## 🗂️ Planned Folder Structure
-
-src/
-├── app/ # App Router pages/layout
-├── components/ # UI + reusable components
-├── features/ # Feature-level modules (cart, checkout, etc.)
-├── store/ # Zustand state
-├── lib/ # Utility functions
-├── types/ # TypeScript interfaces
-├── data/ # Static or CMS-driven product data
-├── styles/ # Tailwind and global styles
 
 ## ✨ Feature Goals
 
 - ✅ Layout shell with responsive header/footer
+- ✅ Mobile-first homepage layout with all sections
+- ✅ Accessibility: alt text, roles, semantic elements
 - 🛒 Cart functionality with add/edit/remove
 - 🧾 Checkout form with validation
 - 💵 Dynamic totals (VAT + shipping logic)
-- 📱 Mobile-first responsive design
 - 💾 Cart persistence with `localStorage`
-- 🔐 Accessible navigation and modals
 - 🌐 CMS integration (planned)
 - 🧪 Testing setup with Jest + Playwright
 
@@ -78,15 +75,17 @@ src/
 
 ## 📅 Development Milestones
 
-| Phase                  | Status  |
-|------------------------|---------|
-| Project Init + Config  | ✅ Done |
-| Layout Shell Setup     | ⏳ Starting Next |
-| Product Pages & Cart   | ⏳ Planned |
-| Checkout Flow          | ⏳ Planned |
-| CMS Integration        | 🔜 Optional |
-| Testing & QA           | 🔜 Final Phase |
-| Blog Documentation     | 📝 Ongoing |
+| Phase                         | Status      |
+|-------------------------------|-------------|
+| Project Init + Config         | ✅ Complete |
+| Layout Shell + Global Styling | ✅ Complete |
+| Mobile Homepage Components    | ✅ Complete |
+| Tablet/Desktop Responsiveness | 🔜 Next |
+| Category & Product Pages      | ⏳ Planned |
+| Cart + Checkout Flow          | ⏳ Planned |
+| CMS Integration               | 🔜 Optional |
+| Testing & QA                  | 🔜 Final Phase |
+| Blog Documentation            | 📝 Ongoing |
 
 ---
 
@@ -105,12 +104,13 @@ This project will be featured in a **build-in-public** blog series at [andrewtee
 
 ## 🧪 Testing Stack
 
-| Type        | Tool |
-|-------------|------|
-| Unit/Component | **Jest** + **React Testing Library** |
-| E2E Testing    | **Playwright** |
-| Linting & Types| ESLint, TypeScript |
-| Accessibility  | Optional: axe-core / Playwright a11y tools |
+| Type            | Tool |
+|-----------------|------|
+| Unit Testing    | Jest + React Testing Library |
+| End-to-End      | Playwright |
+| Linting         | ESLint |
+| Type Checking   | TypeScript |
+| Accessibility   | Manual audit + Playwright a11y tooling |
 
 ---
 
@@ -123,6 +123,6 @@ Connect via [LinkedIn](https://www.linkedin.com/in/andrew-teece/) or visit [andr
 
 ## 💡 Next Step
 
-We’ll begin building the **layout shell** with navigation, footer, and responsive container components using ShadCN and Tailwind’s new v4 utilities. This foundation will support all feature development moving forward.
+We'll now begin adapting the site for **tablet and desktop breakpoints**, followed by implementation of **category and product detail pages**. Component architecture and layout systems are in place to scale efficiently.
 
-Stay tuned!
+Stay tuned for the next update!
