@@ -25,27 +25,24 @@ const categories = [
 export function CategoryGrid() {
   return (
     <section className='py-20 bg-background' aria-label='Product Categories'>
-      <Container className='grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3 '>
+      <Container className='grid gap-12 sm:grid-cols-2 md:grid-cols-3 place-items-center'>
         {categories.map(({ name, slug, image }) => (
           <Link
             key={slug}
             href={`/category/${slug}`}
-            className='relative bg-muted rounded-lg py-10 flex flex-col items-center text-center group'
+            className='relative bg-muted rounded-lg py-10 flex flex-col items-center text-center group w-full max-w-xs'
           >
-            <div className='w-36 h-36 relative -mt-20'>
+            <div className='w-36 h-36 relative -mt-16 sm:-mt-20'>
               <Image
                 src={image}
-                alt={`Category image for ${name}`}
+                alt={`Product category: ${name}`}
                 fill
                 className='object-contain'
                 sizes='(max-width: 768px) 100px, 150px'
               />
             </div>
 
-            <h2
-              className='mt-6 text-lg font-bold uppercase tracking-widest'
-              id='Product Categories'
-            >
+            <h2 className='mt-6 text-lg font-bold uppercase tracking-widest'>
               {name}
             </h2>
 
@@ -57,7 +54,7 @@ export function CategoryGrid() {
                 width={8}
                 height={12}
                 className='transition-transform group-hover:translate-x-1'
-                role='img'
+                role='presentation'
                 aria-hidden='true'
               />
             </span>
