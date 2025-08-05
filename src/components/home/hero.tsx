@@ -1,20 +1,42 @@
 'use client';
 
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 
 export function Hero() {
   return (
     <section
-      className="relative bg-[url('/assets/home/mobile/image-header.jpg')] 
-             md:bg-[url('/assets/home/tablet/image-header.jpg')] 
-             lg:bg-[url('/assets/home/desktop/image-hero.jpg')] 
-             bg-cover bg-[center_top_95%] md:bg-[center_top_40%] lg:bg-[center_top_45%] 
-             text-white overflow-hidden"
+      className='relative text-white overflow-hidden min-h-[600px]'
+      role='banner'
     >
-      {/* Optional dark overlay for contrast */}
+      {/* Responsive background image */}
+      <Image
+        src='/assets/home/mobile/image-header.jpg'
+        alt='Audiophile XX99 Mark II Headphones'
+        fill
+        className='object-cover object-[center_top_95%] md:hidden'
+        priority
+      />
+      <Image
+        src='/assets/home/tablet/image-header.jpg'
+        alt='Audiophile XX99 Mark II Headphones'
+        fill
+        className='object-cover object-[center_top_40%] hidden md:block lg:hidden'
+        priority
+      />
+      <Image
+        src='/assets/home/desktop/image-hero.jpg'
+        alt='Audiophile XX99 Mark II Headphones'
+        fill
+        className='object-cover object-[center_top_45%] hidden lg:block'
+        priority
+      />
+
+      {/* Optional dark overlay */}
       <div className='absolute inset-0 bg-black/50 z-0' />
 
+      {/* Text content */}
       <div className='relative z-10 flex items-center justify-center text-center lg:text-left min-h-[600px] px-6 py-24'>
         <div className='max-w-2xl mx-auto'>
           <p className='uppercase text-sm tracking-[0.5em] text-white/70 mb-4'>

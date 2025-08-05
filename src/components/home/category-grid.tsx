@@ -24,7 +24,7 @@ const categories = [
 
 export function CategoryGrid() {
   return (
-    <section className='py-20 bg-background'>
+    <section className='py-20 bg-background' aria-label='Product Categories'>
       <Container className='grid grid-cols-1 gap-16 sm:grid-cols-2 lg:grid-cols-3 '>
         {categories.map(({ name, slug, image }) => (
           <Link
@@ -42,7 +42,10 @@ export function CategoryGrid() {
               />
             </div>
 
-            <h2 className='mt-6 text-lg font-bold uppercase tracking-widest'>
+            <h2
+              className='mt-6 text-lg font-bold uppercase tracking-widest'
+              id='Product Categories'
+            >
               {name}
             </h2>
 
@@ -54,6 +57,8 @@ export function CategoryGrid() {
                 width={8}
                 height={12}
                 className='transition-transform group-hover:translate-x-1'
+                role='img'
+                aria-hidden='true'
               />
             </span>
           </Link>

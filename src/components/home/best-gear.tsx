@@ -5,7 +5,7 @@ import { Container } from '@/components/layout/container';
 
 export function BestGear() {
   return (
-    <section className='py-24'>
+    <section className='py-24' role='region' aria-labelledby='category-heading'>
       <Container>
         <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
           {/* Image */}
@@ -16,12 +16,16 @@ export function BestGear() {
               width={1080}
               height={1080}
               className='w-full h-full object-cover'
+              priority
             />
           </div>
 
           {/* Text */}
           <div className='text-center md:text-left order-2 md:order-1'>
-            <h2 className='text-3xl md:text-4xl font-bold uppercase tracking-wide text-neutral-900 px-2'>
+            <h2
+              className='text-3xl md:text-4xl font-bold uppercase tracking-wide text-neutral-900 px-2'
+              id='category-heading'
+            >
               Bringing you the <span className='text-primary'>best</span> audio
               gear
             </h2>
