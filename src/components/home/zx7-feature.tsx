@@ -33,7 +33,7 @@ export function Zx7Feature() {
           {/* Mobile */}
           <Image
             src='/assets/home/mobile/image-speaker-zx7.jpg'
-            alt='ZX7 Speaker'
+            alt='ZX7 Speaker – mid-range portable speaker on neutral background'
             fill
             className='absolute inset-0 object-cover block sm:hidden '
             priority

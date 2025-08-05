@@ -35,7 +35,7 @@ export function CategoryGrid() {
             <div className='w-36 h-36 relative -mt-20'>
               <Image
                 src={image}
-                alt={name}
+                alt={`Category image for ${name}`}
                 fill
                 className='object-contain'
                 sizes='(max-width: 768px) 100px, 150px'

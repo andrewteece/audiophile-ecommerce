@@ -13,7 +13,7 @@ export function Zx9Feature() {
         <div className='absolute inset-0 flex items-center justify-center pointer-events-none z-0'>
           <Image
             src='/assets/home/desktop/pattern-circles.svg'
-            alt=''
+            alt='ZX9 Speaker – premium speaker with bold design and circular pattern'
             role='presentation'
             width={944}
             height={944}
