@@ -2,6 +2,7 @@ import '../styles/globals.css';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Manrope } from 'next/font/google';
+import { ScrollToTopButton } from '@/components/ui/scroll-to-top';
 
 const manrope = Manrope({ subsets: ['latin'], variable: '--font-manrope' });
 
@@ -21,6 +22,7 @@ export default function RootLayout({
         <Header />
         <main>{children}</main>
         <Footer />
+        <ScrollToTopButton />
       </body>
     </html>
   );
