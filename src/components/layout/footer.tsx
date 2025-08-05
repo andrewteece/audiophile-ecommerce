@@ -1,4 +1,3 @@
-// components/footer.tsx
 import Link from 'next/link';
 import Image from 'next/image';
 import { Container } from './container';
@@ -6,41 +5,45 @@ import { Container } from './container';
 export function Footer() {
   return (
     <footer className='bg-black text-white'>
-      <Container className='flex flex-col items-center gap-8 py-14 text-center md:items-start md:text-left lg:gap-10'>
-        {/* Logo */}
-        <Link href='/'>
-          <Image
-            src='/assets/shared/desktop/logo.svg'
-            alt='Audiophile logo'
-            width={143}
-            height={25}
-          />
-        </Link>
+      <Container className='flex flex-col items-center gap-12 py-14 md:items-start md:gap-10 lg:gap-14'>
+        {/* Top Section */}
+        <div className='flex flex-col items-center gap-8 text-center md:items-start md:text-left'>
+          {/* Logo */}
+          <Link href='/'>
+            <Image
+              src='/assets/shared/desktop/logo.svg'
+              alt='Audiophile logo'
+              width={143}
+              height={25}
+              priority
+            />
+          </Link>
 
-        {/* Navigation */}
-        <nav className='flex flex-col gap-4 text-sm uppercase tracking-widest md:flex-row md:gap-6'>
-          <Link href='/'>Home</Link>
-          <Link href='/headphones'>Headphones</Link>
-          <Link href='/speakers'>Speakers</Link>
-          <Link href='/earphones'>Earphones</Link>
-        </nav>
+          {/* Navigation */}
+          <nav className='flex flex-col gap-4 text-sm uppercase tracking-widest md:flex-row md:gap-6'>
+            <Link href='/'>Home</Link>
+            <Link href='/headphones'>Headphones</Link>
+            <Link href='/speakers'>Speakers</Link>
+            <Link href='/earphones'>Earphones</Link>
+          </nav>
+        </div>
 
-        {/* Description */}
-        <p className='max-w-md text-sm opacity-70'>
-          Audiophile is an all in one stop to fulfill your audio needs.
-          We&apos;re a small team of music lovers and sound specialists who are
-          devoted to helping you get the most out of personal audio. Come and
-          visit our demo facility - we’re open 7 days a week.
+        {/* Middle Section - Description */}
+        <p className='max-w-md text-sm leading-relaxed opacity-70 text-center md:text-left'>
+          Audiophile is an all in one stop to fulfill your audio needs. We’re a
+          small team of music lovers and sound specialists who are devoted to
+          helping you get the most out of personal audio. Come and visit our
+          demo facility - we’re open 7 days a week.
         </p>
 
-        {/* Bottom section */}
-        <div className='flex flex-col items-center justify-between gap-6 w-full md:flex-row'>
+        {/* Bottom Section */}
+        <div className='flex flex-col items-center gap-8 w-full md:flex-row md:justify-between md:items-end'>
           {/* Copyright */}
-          <p className='text-sm opacity-70'>
-            &copy; {new Date().getFullYear()} Audiophile. All Rights Reserved
+          <p className='text-sm opacity-70 text-center md:text-left'>
+            © {new Date().getFullYear()} Audiophile. All Rights Reserved
           </p>
 
-          {/* Social links */}
+          {/* Social Icons */}
           <div className='flex gap-4'>
             <Link href='/' aria-label='Facebook'>
               <Image
