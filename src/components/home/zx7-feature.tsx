@@ -44,7 +44,7 @@ export function Zx7Feature() {
               desktop: '/assets/home/desktop/image-speaker-zx7.jpg',
             }}
             objectPosition='center'
-            className='absolute inset-0 object-cover opacity-90'
+            className='absolute inset-0 object-cover'
           />
         </div>
       </Container>
