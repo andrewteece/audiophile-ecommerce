@@ -1,6 +1,6 @@
 'use client';
 
-import ResponsiveImage from '../ui/responsiveImage';
+import ResponsiveImage from '../ui/ResponsiveImage';
 import { getBlurDataURL } from '@/lib/blurData';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';

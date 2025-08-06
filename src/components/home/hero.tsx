@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { getBlurDataURL } from '@/lib/blurData';
-import ResponsiveImage from '@/components/ui/responsiveImage';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 
 export function Hero() {
   return (

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import ResponsiveImage from '@/components/ui/responsiveImage';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import { getBlurDataURL } from '@/lib/blurData';
 import { Container } from '@/components/layout/container';
 

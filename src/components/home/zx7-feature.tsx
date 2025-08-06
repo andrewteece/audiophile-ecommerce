@@ -3,7 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
-import ResponsiveImage from '@/components/ui/responsiveImage';
+import ResponsiveImage from '@/components/ui/ResponsiveImage';
 import { getBlurDataURL } from '@/lib/blurData';
 
 export function Zx7Feature() {
