@@ -1,6 +1,6 @@
 'use client';
 
-import { ResponsiveImage } from '../ui/responsiveImage';
+import ResponsiveImage from '../ui/responsiveImage';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';

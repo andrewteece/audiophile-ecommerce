@@ -2,16 +2,14 @@
 import { tv } from 'tailwind-variants';
 
 export const responsiveImageWrapper = tv({
-  base: 'relative w-full h-full',
   variants: {
     ratio: {
       square: 'aspect-square',
-      wide: 'aspect-video',
+      wide: 'aspect-[16/9]',
       tall: 'aspect-[3/4]',
-      auto: '',
     },
   },
   defaultVariants: {
-    ratio: 'auto',
+    ratio: 'square', // or remove to force explicit usage
   },
 });

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { ResponsiveImage } from '@/components/ui/responsiveImage';
+import ResponsiveImage from '@/components/ui/responsiveImage';
 
 export function Hero() {
   return (
@@ -11,7 +11,7 @@ export function Hero() {
       role='banner'
     >
       {/* Background Image */}
-      <div className='absolute inset-0 z-0'>
+      <div className='absolute inset-0 z-0 h-full'>
         <ResponsiveImage
           alt='XX99 Mark II Headphones – flagship over-ear model on dark background'
           priority
@@ -21,12 +21,13 @@ export function Hero() {
             desktop: '/assets/home/desktop/image-hero.jpg',
           }}
           objectPosition='top'
+          className='object-cover object-top lg:object-center'
         />
         <div className='absolute inset-0 bg-black/50' />
       </div>
 
       {/* Content */}
-      <div className='relative z-10 flex items-center justify-center text-center lg:text-left min-h-[600px] px-6 py-24'>
+      <div className='relative z-10 flex items-center justify-center text-center lg:text-left h-full px-6 py-24'>
         <div className='max-w-2xl mx-auto'>
           <p className='uppercase text-sm tracking-[0.5em] text-white/70 mb-4'>
             New Product

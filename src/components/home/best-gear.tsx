@@ -2,7 +2,7 @@
 
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
-import { ResponsiveImage } from '@/components/ui/responsiveImage';
+import ResponsiveImage from '@/components/ui/responsiveImage';
 import Link from 'next/link';
 
 export default function BestGear() {

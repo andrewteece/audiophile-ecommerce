@@ -1,59 +1,61 @@
 'use client';
 
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 import { responsiveImageWrapper } from './ResponsiveImage.variants';
 
-type ResponsiveImageProps = {
+type Ratio = 'auto' | 'square' | 'wide' | 'tall';
+
+type Props = {
   alt: string;
-  className?: string;
-  priority?: boolean;
   images: {
     mobile: string;
     tablet: string;
     desktop: string;
   };
+  className?: string;
   objectPosition?: string;
-  ratio?: 'square' | 'wide' | 'tall' | 'auto';
+  ratio?: Ratio;
+  priority?: boolean;
   blurDataURL?: string;
 };
 
-export function ResponsiveImage({
+export default function ResponsiveImage({
   alt,
-  className = '',
-  priority = false,
   images,
+  className = '',
   objectPosition = 'center',
   ratio = 'auto',
+  priority = false,
   blurDataURL,
-}: ResponsiveImageProps) {
+}: Props) {
   const sharedProps = {
     fill: true,
     priority,
     placeholder: blurDataURL ? ('blur' as const) : ('empty' as const),
-    blurDataURL,
+    ...(blurDataURL && { blurDataURL }),
     style: { objectPosition },
-    className: `object-cover ${className}`,
+    className: cn('object-cover', className),
   };
+
+  const wrapperClass =
+    ratio === 'auto' ? '' : responsiveImageWrapper({ ratio });
 
   return (
     <>
       {/* Mobile */}
-      <div className={responsiveImageWrapper({ ratio }) + ' md:hidden'}>
+      <div className={cn(wrapperClass, 'md:hidden')}>
         <Image src={images.mobile} alt={alt} {...sharedProps} />
       </div>
 
       {/* Tablet */}
-      <div
-        className={
-          responsiveImageWrapper({ ratio }) + ' hidden md:block lg:hidden'
-        }
-      >
-        <Image src={images.mobile} alt={alt} {...sharedProps} />
+      <div className={cn(wrapperClass, 'hidden md:block lg:hidden')}>
+        <Image src={images.tablet} alt={alt} {...sharedProps} />
       </div>
 
       {/* Desktop */}
-      <div className={responsiveImageWrapper({ ratio }) + ' hidden lg:block'}>
-        <Image src={images.mobile} alt={alt} {...sharedProps} />
+      <div className={cn(wrapperClass, 'hidden lg:block')}>
+        <Image src={images.desktop} alt={alt} {...sharedProps} />
       </div>
     </>
   );
