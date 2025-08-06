@@ -18,6 +18,8 @@ type Props = {
   ratio?: Ratio;
   priority?: boolean;
   blurDataURL?: string;
+  placeholder?: 'blur' | 'empty';
+  fill?: boolean;
 };
 
 export default function ResponsiveImage({

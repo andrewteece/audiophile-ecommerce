@@ -132,3 +132,12 @@ export const BLUR_IMAGE = {
   "shared_tablet_image-zx7-speaker": "data:image/jpg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAOAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABgf/xAAhEAABAgYDAQEAAAAAAAAAAAABAgMABAUGERIHITFBUf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCi8ici1S2bsapUjJSbzC0Mnd3bbKzgjojwRUVnVRH4cQNufj2lXFXkVecmZ9qaShtADDiUpwg5HRSffsMlDZRJ+nMB/9k=",
   "shared_tablet_image-zx9-speaker": "data:image/jpg;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAOAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAABgf/xAAkEAABAwMDBAMAAAAAAAAAAAABAgMEAAURBgchEhMVMSJScf/EABQBAQAAAAAAAAAAAAAAAAAAAAD/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCm3Tc5Fv3Vc0lIjR2IzUUPqmOunK1qSClIHpI59knOOOSKpQ5AoPftsdPXzVLuoJwneQcS2hfbkYbIRjp+OD9Qf0U4oP/Z"
 };
+
+export function getBlurDataURL(path: string): string | undefined {
+  const key = path
+    .replace(/^\/?assets\//, '') // strip leading /assets/
+    .replace(/\.[^.]+$/, '') // remove file extension
+    .replace(/[\/\\]/g, '_'); // slashes → underscores
+
+  return BLUR_IMAGE[key as keyof typeof BLUR_IMAGE];
+}

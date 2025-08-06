@@ -1,24 +1,38 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
 import { Container } from '@/components/layout/container';
+import ResponsiveImage from '@/components/ui/responsiveImage';
+import { getBlurDataURL } from '@/lib/blurData';
+import Image from 'next/image';
 
 const categories = [
   {
     name: 'Headphones',
     slug: 'headphones',
-    image: '/assets/shared/desktop/image-category-thumbnail-headphones.png',
+    image: {
+      mobile: '/assets/shared/desktop/image-category-thumbnail-headphones.png',
+      tablet: '/assets/shared/desktop/image-category-thumbnail-headphones.png',
+      desktop: '/assets/shared/desktop/image-category-thumbnail-headphones.png',
+    },
   },
   {
     name: 'Speakers',
     slug: 'speakers',
-    image: '/assets/shared/desktop/image-category-thumbnail-speakers.png',
+    image: {
+      mobile: '/assets/shared/desktop/image-category-thumbnail-speakers.png',
+      tablet: '/assets/shared/desktop/image-category-thumbnail-speakers.png',
+      desktop: '/assets/shared/desktop/image-category-thumbnail-speakers.png',
+    },
   },
   {
     name: 'Earphones',
     slug: 'earphones',
-    image: '/assets/shared/desktop/image-category-thumbnail-earphones.png',
+    image: {
+      mobile: '/assets/shared/desktop/image-category-thumbnail-earphones.png',
+      tablet: '/assets/shared/desktop/image-category-thumbnail-earphones.png',
+      desktop: '/assets/shared/desktop/image-category-thumbnail-earphones.png',
+    },
   },
 ];
 
@@ -33,12 +47,12 @@ export function CategoryGrid() {
             className='relative bg-muted rounded-lg py-10 flex flex-col items-center text-center group w-full max-w-xs'
           >
             <div className='w-36 h-36 relative -mt-16 sm:-mt-20'>
-              <Image
-                src={image}
+              <ResponsiveImage
                 alt={`Product category: ${name}`}
-                fill
-                className='object-contain'
-                sizes='(max-width: 768px) 100px, 150px'
+                images={image}
+                placeholder='blur'
+                blurDataURL={getBlurDataURL(image.mobile)}
+                objectPosition='center'
               />
             </div>
 
@@ -53,9 +67,9 @@ export function CategoryGrid() {
                 alt=''
                 width={8}
                 height={12}
-                className='transition-transform group-hover:translate-x-1'
                 role='presentation'
                 aria-hidden='true'
+                className='transition-transform group-hover:translate-x-1'
               />
             </span>
           </Link>

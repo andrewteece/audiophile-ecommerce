@@ -1,6 +1,7 @@
 'use client';
 
 import ResponsiveImage from '../ui/responsiveImage';
+import { getBlurDataURL } from '@/lib/blurData';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
@@ -19,6 +20,10 @@ export function Yx1Feature() {
                 tablet: '/assets/home/tablet/image-earphones-yx1.jpg',
                 desktop: '/assets/home/desktop/image-earphones-yx1.jpg',
               }}
+              placeholder='blur'
+              blurDataURL={getBlurDataURL(
+                '/assets/home/mobile/image-earphones-yx1.jpg'
+              )}
               className='rounded-lg'
               objectPosition='center'
               priority

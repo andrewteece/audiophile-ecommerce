@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
+import { getBlurDataURL } from '@/lib/blurData';
 import ResponsiveImage from '@/components/ui/responsiveImage';
 
 export function Hero() {
@@ -15,6 +16,8 @@ export function Hero() {
         <ResponsiveImage
           alt='XX99 Mark II Headphones – flagship over-ear model on dark background'
           priority
+          placeholder='blur'
+          blurDataURL={getBlurDataURL('/assets/shared/mobile/image-header.jpg')}
           images={{
             mobile: '/assets/home/mobile/image-header.jpg',
             tablet: '/assets/home/tablet/image-header.jpg',

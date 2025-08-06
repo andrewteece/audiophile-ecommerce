@@ -1,9 +1,10 @@
 'use client';
 
-import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
+import ResponsiveImage from '@/components/ui/responsiveImage';
+import { getBlurDataURL } from '@/lib/blurData';
 
 export function Zx7Feature() {
   return (
@@ -29,30 +30,21 @@ export function Zx7Feature() {
             </Button>
           </div>
 
-          {/* Responsive Background Images */}
-          {/* Mobile */}
-          <Image
-            src='/assets/home/mobile/image-speaker-zx7.jpg'
-            alt='ZX7 Speaker – mid-range portable speaker on neutral background'
-            fill
-            className='absolute inset-0 object-cover block sm:hidden '
+          {/* Background Image */}
+          <ResponsiveImage
+            alt='ZX7 Speaker – modern speaker on neutral background'
             priority
-          />
-          {/* Tablet */}
-          <Image
-            src='/assets/home/tablet/image-speaker-zx7.jpg'
-            alt='ZX7 Speaker'
-            fill
-            className='absolute inset-0 object-cover hidden sm:block lg:hidden opacity-20'
-            priority
-          />
-          {/* Desktop */}
-          <Image
-            src='/assets/home/desktop/image-speaker-zx7.jpg'
-            alt='ZX7 Speaker'
-            fill
-            className='absolute inset-0 object-cover hidden lg:block opacity-20'
-            priority
+            placeholder='blur'
+            blurDataURL={getBlurDataURL(
+              '/assets/home/mobile/image-speaker-zx7.jpg'
+            )}
+            images={{
+              mobile: '/assets/home/mobile/image-speaker-zx7.jpg',
+              tablet: '/assets/home/tablet/image-speaker-zx7.jpg',
+              desktop: '/assets/home/desktop/image-speaker-zx7.jpg',
+            }}
+            objectPosition='center'
+            className='absolute inset-0 object-cover opacity-90'
           />
         </div>
       </Container>

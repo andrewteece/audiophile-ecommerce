@@ -3,6 +3,7 @@
 import { Button } from '@/components/ui/button';
 import { Container } from '@/components/layout/container';
 import ResponsiveImage from '@/components/ui/responsiveImage';
+import { getBlurDataURL } from '@/lib/blurData';
 import Link from 'next/link';
 
 export default function BestGear() {
@@ -15,6 +16,10 @@ export default function BestGear() {
             <ResponsiveImage
               alt='Man enjoying audio gear'
               priority
+              placeholder='blur'
+              blurDataURL={getBlurDataURL(
+                '/assets/shared/mobile/image-best-gear.jpg'
+              )}
               images={{
                 mobile: '/assets/shared/mobile/image-best-gear.jpg',
                 tablet: '/assets/shared/tablet/image-best-gear.jpg',

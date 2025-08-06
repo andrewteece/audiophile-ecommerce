@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import ResponsiveImage from '@/components/ui/responsiveImage';
+import { getBlurDataURL } from '@/lib/blurData';
 import { Container } from '@/components/layout/container';
 
 export default function Zx9Feature() {
@@ -17,6 +18,10 @@ export default function Zx9Feature() {
               tablet: '/assets/home/tablet/image-speaker-zx9.png',
               desktop: '/assets/home/desktop/image-speaker-zx9.png',
             }}
+            placeholder='blur'
+            blurDataURL={getBlurDataURL(
+              '/assets/home/mobile/image-speaker-zx9.jpg'
+            )}
             objectPosition='center'
             className='object-contain'
             ratio='auto'
