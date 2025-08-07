@@ -1,27 +1,15 @@
 import { notFound } from 'next/navigation';
-import type { Metadata } from 'next';
-import { getProducts } from '@/lib/loadProducts';
+import { type Metadata } from 'next';
 import { getProductBySlug } from '@/lib/loadProductBySlug';
-
-// Optional: add ISR if you want
-export const revalidate = 60;
-
-// ✅ Fix: generate static paths
-export async function generateStaticParams() {
-  const products = await getProducts();
-
-  return products.map((product) => ({
-    slug: product.slug,
-  }));
-}
 
 // ✅ Safe Metadata
 export async function generateMetadata({
-  params: { slug },
+  params,
 }: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const product = await getProductBySlug(slug);
+  const product = await getProductBySlug(params.slug);
+
   return {
     title: product?.name || 'Product',
     description: product?.description || '',
@@ -30,22 +18,18 @@ export async function generateMetadata({
 
 // ✅ Product Page
 export default async function ProductPage({
-  params: { slug },
+  params,
 }: {
   params: { slug: string };
 }) {
-  const product = await getProductBySlug(slug);
+  const product = await getProductBySlug(params.slug);
 
   if (!product) return notFound();
 
   return (
-    <main className='space-y-24'>
-      <section>
-        <h1 className='text-3xl font-bold'>{product.name}</h1>
-        <p className='text-muted-foreground max-w-xl mt-4'>
-          {product.description}
-        </p>
-      </section>
-    </main>
+    <div>
+      <h1>{product.name}</h1>
+      {/* Your product UI */}
+    </div>
   );
 }
