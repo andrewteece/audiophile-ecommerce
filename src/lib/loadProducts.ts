@@ -4,6 +4,11 @@ import { ProductsSchema, type ProductList } from '@/types/schemas/product';
 
 const filePath = path.join(process.cwd(), 'data', 'data.json');
 
+export async function getProducts() {
+  const { products } = await import('@/data/products');
+  return products;
+}
+
 export function loadProducts(): ProductList {
   const raw = fs.readFileSync(filePath, 'utf-8');
   const parsed = JSON.parse(raw);
