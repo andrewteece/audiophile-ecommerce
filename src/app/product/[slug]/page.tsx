@@ -3,12 +3,11 @@ import { type Metadata } from 'next';
 import { getProductBySlug } from '@/lib/loadProductBySlug';
 
 // ✅ Safe Metadata
-export async function generateMetadata({
-  params,
-}: {
+export async function generateMetadata(props: {
   params: { slug: string };
 }): Promise<Metadata> {
-  const product = await getProductBySlug(params.slug);
+  const slug = props?.params?.slug; // ✅ safe usage
+  const product = await getProductBySlug(slug);
 
   return {
     title: product?.name || 'Product',
@@ -17,19 +16,16 @@ export async function generateMetadata({
 }
 
 // ✅ Product Page
-export default async function ProductPage({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const product = await getProductBySlug(params.slug);
+export default async function ProductPage(props: { params: { slug: string } }) {
+  const slug = props?.params?.slug; // ✅ safe usage
+  const product = await getProductBySlug(slug);
 
   if (!product) return notFound();
 
   return (
     <div>
       <h1>{product.name}</h1>
-      {/* Your product UI */}
+      {/* Continue rendering product details */}
     </div>
   );
 }
