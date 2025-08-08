@@ -1,12 +1,10 @@
 import { products } from '@/data/products';
-import { ProductCard } from '@/features/products/product-card';
+import { ProductCard } from '@/features/product/product-card';
 import { notFound } from 'next/navigation';
 
-export default async function CategoryPage(
-  props: {
-    params: Promise<{ slug: string }>;
-  }
-) {
+export default async function CategoryPage(props: {
+  params: Promise<{ slug: string }>;
+}) {
   const params = await props.params;
   const category = params.slug;
   const filtered = products.filter((p) => p.category === category);

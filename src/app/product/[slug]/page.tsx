@@ -6,7 +6,7 @@ import { getProductBySlug } from '@/lib/loadProductBySlug';
 export async function generateMetadata(props: {
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
-  const slug = (await props?.params)?.slug; // ✅ safe usage
+  const slug = (await props?.params)?.slug; // safe usage
   const product = await getProductBySlug(slug);
 
   return {
@@ -16,8 +16,10 @@ export async function generateMetadata(props: {
 }
 
 // ✅ Product Page
-export default async function ProductPage(props: { params: Promise<{ slug: string }> }) {
-  const slug = (await props?.params)?.slug; // ✅ safe usage
+export default async function ProductPage(props: {
+  params: Promise<{ slug: string }>;
+}) {
+  const slug = (await props?.params)?.slug; // safe usage
   const product = await getProductBySlug(slug);
 
   if (!product) return notFound();
