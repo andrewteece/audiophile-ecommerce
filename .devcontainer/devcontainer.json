@@ -1,10 +1,10 @@
 {
-  "name": "Audiophile E‑commerce (Next.js + TS)",
+  "name": "Audiophile E-commerce (Next.js + TS)",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
   "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "20",
-      "nodeGypDependencies": true
-    },
     "ghcr.io/devcontainers/features/git:1": {}
   },
 
@@ -37,10 +37,7 @@
     }
   },
 
-  "updateContentCommand": "",
-  "postCreateCommand": "bash -lc 'corepack enable && corepack prepare pnpm@10.14.0 --activate && pnpm install'",
-  "postStartCommand": "",
-
+  "postCreateCommand": "pnpm install",
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": { "label": "Next.js dev server", "onAutoForward": "notify" }
