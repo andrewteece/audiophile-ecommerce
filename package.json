@@ -2,11 +2,21 @@
   "name": "audiophile-ecommerce",
   "version": "0.1.0",
   "private": true,
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "sharp",
+      "@swc/core",
+      "@tailwindcss/oxide"
+    ]
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "jest",
     "generate-blurs": "tsx scripts/generate-blurs.ts"
   },
   "dependencies": {
