@@ -22,7 +22,8 @@
     }
   },
   "remoteEnv": { "NEXT_TELEMETRY_DISABLED": "1" },
-  "postCreateCommand": "corepack enable && if [ -f package.json ]; then pnpm install; fi",
+  "postCreateCommand": "corepack enable --install-directory ~/.local/bin && corepack prepare pnpm@latest --activate && pnpm install"
+,
   "postStartCommand": "if [ -f package.json ] && [ ! -d node_modules ]; then pnpm install; fi",
   "forwardPorts": [3000]
 }
