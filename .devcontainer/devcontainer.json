@@ -13,9 +13,7 @@
   "containerEnv": {
     "PNPM_STORE_DIR": "/home/node/.pnpm-store"
   },
-  "mounts": [
-    "type=volume,source=pnpm-store,target=/home/node/.pnpm-store"
-  ],
+  "mounts": ["type=volume,source=pnpm-store,target=/home/node/.pnpm-store"],
 
   "customizations": {
     "vscode": {
@@ -37,7 +35,7 @@
     }
   },
 
-  "postCreateCommand": "pnpm install",
+  "postCreateCommand": "pnpm approve-builds --all && pnpm install",
   "forwardPorts": [3000],
   "portsAttributes": {
     "3000": { "label": "Next.js dev server", "onAutoForward": "notify" }

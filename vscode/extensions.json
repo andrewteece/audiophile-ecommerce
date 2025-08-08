@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "orta.vscode-jest",
+    "firsttris.vscode-jest-runner",
+    "bierner.markdown-mermaid",
+    "streetsidesoftware.code-spell-checker"
+  ]
+}
