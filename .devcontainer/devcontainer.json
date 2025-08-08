@@ -1,29 +1,48 @@
 {
-  "name": "Audiophile E‑commerce",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "name": "Audiophile E‑commerce (Next.js + TS)",
   "features": {
-    "ghcr.io/devcontainers/features/node:1": { "version": "20" },
-    "ghcr.io/devcontainers-extra/features/pnpm:2": { "version": "9" }
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20",
+      "nodeGypDependencies": true
+    },
+    "ghcr.io/devcontainers/features/git:1": {}
   },
-  "updateRemoteUserUID": true,
+
+  "remoteUser": "node",
+
+  "containerEnv": {
+    "PNPM_STORE_DIR": "/home/node/.pnpm-store"
+  },
+  "mounts": [
+    "type=cache,target=/home/node/.pnpm-store"
+  ],
+
   "customizations": {
     "vscode": {
       "extensions": [
         "dbaeumer.vscode-eslint",
         "esbenp.prettier-vscode",
         "bradlc.vscode-tailwindcss",
+        "Orta.vscode-jest",
+        "firsttris.vscode-jest-runner",
+        "bierner.markdown-mermaid",
         "streetsidesoftware.code-spell-checker"
       ],
       "settings": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true,
-        "files.eol": "\n",
-        "typescript.tsdk": "node_modules/typescript/lib"
+        "typescript.tsdk": "node_modules/typescript/lib",
+        "jest.autoRun": "off"
       }
     }
   },
-  "remoteEnv": { "NEXT_TELEMETRY_DISABLED": "1" },
-  "postCreateCommand": "corepack enable --install-directory ~/.local/bin && corepack prepare pnpm@latest --activate && pnpm install"
-,
-  "postStartCommand": "if [ -f package.json ] && [ ! -d node_modules ]; then pnpm install; fi",
-  "forwardPorts": [3000]
+
+  "updateContentCommand": "",
+  "postCreateCommand": "bash -lc 'corepack enable && corepack prepare pnpm@10.14.0 --activate && pnpm install'",
+  "postStartCommand": "",
+
+  "forwardPorts": [3000],
+  "portsAttributes": {
+    "3000": { "label": "Next.js dev server", "onAutoForward": "notify" }
+  }
 }
