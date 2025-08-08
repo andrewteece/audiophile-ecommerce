@@ -14,7 +14,7 @@
     "PNPM_STORE_DIR": "/home/node/.pnpm-store"
   },
   "mounts": [
-    "type=cache,target=/home/node/.pnpm-store"
+    "type=volume,source=pnpm-store,target=/home/node/.pnpm-store"
   ],
 
   "customizations": {
